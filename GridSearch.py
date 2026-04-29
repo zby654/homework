@@ -1,4 +1,3 @@
-# 解决 OMP 报错
 import os
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"

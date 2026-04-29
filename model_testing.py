@@ -8,7 +8,7 @@ from sklearn.metrics import confusion_matrix
 
 # ====================== 1. 加载数据 ======================
 def load_data():
-    data = np.load(r"E:\张博宇试作\PythonProject1\eurosat_processed.npz")
+    data = np.load("eurosat_processed.npz")
     X_train = data["X_train"]
     X_val = data["X_val"]
     X_test = data["X_test"]
@@ -128,4 +128,4 @@ if __name__ == "__main__":
     visualize_weights(model)
     error_example(X_test, y_test, y_pred)
 
-    print("\n🎉 全部完成！")
+    print("\n 全部完成")

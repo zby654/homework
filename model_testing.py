@@ -1,4 +1,3 @@
-# --------------- 无GUI报错 ---------------
 import os
 os.environ["MPLBACKEND"] = "Agg"
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -119,13 +118,13 @@ if __name__ == "__main__":
     # 1. 创建模型
     model = MLP(hidden1=512, hidden2=256, activation="relu")
 
-    # 2. 加载你保存好的模型
+    # 2. 加载模型
     best_weights = load_model("best_model.npz")
 
-    # 3. 测试！
+    # 3. 测试
     y_pred = test(model, X_test, y_test, best_weights)
 
-    # 4. 保存所有图片（写报告用）
+    # 4. 保存所有图片
     visualize_weights(model)
     error_example(X_test, y_test, y_pred)
 

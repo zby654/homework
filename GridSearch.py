@@ -9,7 +9,7 @@ import itertools
 
 # ====================== 1. 加载数据 ======================
 def load_data():
-    data = np.load(r"E:\张博宇试作\PythonProject1\eurosat_processed.npz")
+    data = np.load(r"eurosat_processed.npz")
     return data["X_train"], data["X_val"], data["X_test"], data["y_train"], data["y_val"], data["y_test"]
 
 

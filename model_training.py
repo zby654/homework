@@ -1,4 +1,3 @@
-# 解决 OMP 报错
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -6,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
-# 统一后端，杜绝Qt报错
 plt.switch_backend("TkAgg")
 
 # ====================== 1. 加载数据 + 归一化 ======================
@@ -157,7 +155,7 @@ def save_model(weights, path="best_model.npz"):
     np.savez(path, W1=weights[0], b1=weights[1], W2=weights[2], b2=weights[3], W3=weights[4], b3=weights[5])
     print("✅ 模型已保存：best_model.npz")
 
-# ====================== 1. 绘制Loss&Acc曲线（作业必交） ======================
+# ====================== 1. 绘制Loss&Acc曲线 ======================
 def plot_curve(train_acc, val_acc, train_loss, val_loss_hist):
     plt.figure(figsize=(12,5))
     plt.subplot(1,2,1)
@@ -179,7 +177,7 @@ def plot_curve(train_acc, val_acc, train_loss, val_loss_hist):
     plt.close()
     print("✅ 训练曲线已保存：loss_acc_curve.png")
 
-# ====================== 2. 第一层权重可视化（作业必交） ======================
+# ====================== 2. 第一层权重可视化 ======================
 def visualize_w1(model):
     W1 = model.W1
     plt.figure(figsize=(10,8))
@@ -194,7 +192,7 @@ def visualize_w1(model):
     plt.close()
     print("✅ 权重可视化图已保存：weight_vis.png")
 
-# ====================== 3. 错例分析图（作业必交） ======================
+# ====================== 3. 错例分析图 ======================
 def error_vis(X_test, y_test, y_pred):
     wrong_idx = np.where(y_pred != y_test)[0]
     plt.figure(figsize=(12,6))

@@ -9,7 +9,7 @@ plt.switch_backend("TkAgg")
 
 # ====================== 1. 加载数据 + 归一化 ======================
 def load_data():
-    data = np.load(r"E:\张博宇试作\PythonProject1\eurosat_processed.npz")
+    data = np.load(r"eurosat_processed.npz")
     X_train = data["X_train"]
     X_val = data["X_val"]
     X_test = data["X_test"]

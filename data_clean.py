@@ -4,14 +4,13 @@ import numpy as np
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
-# 1. 这里已经改成你电脑上的真实路径了！
+# 1.改为电脑内图片真实路径
 DATA_PATH = r"E:\张博宇试作\CS600003\EuroSAT_RGB"
 IMG_SIZE = 64  # 把所有图片统一缩放到64×64
 CLASSES = ['AnnualCrop','Forest','HerbaceousVegetation','Highway',
            'Industrial','Pasture','PermanentCrop','Residential','River','SeaLake']
 
 def load_eurosat_data():
-    """从你给的路径里读取所有图片和标签"""
     images = []
     labels = []
 
@@ -68,11 +67,10 @@ if __name__ == "__main__":
     X, y = load_eurosat_data()
     # 2. 划分训练/验证/测试集并展平
     X_train, X_val, X_test, y_train, y_val, y_test = split_data(X, y)
-    # 3. 保存成 .npz 文件，后面的模型直接用，不用再读图片了
+    # 3. 保存成 .npz 文件
     np.savez(
         "eurosat_processed.npz",
         X_train=X_train, X_val=X_val, X_test=X_test,
         y_train=y_train, y_val=y_val, y_test=y_test
     )
     print("\n💾 数据已保存为：eurosat_processed.npz")
-    print("第一步完成！接下来可以直接用这个文件训练模型了。")

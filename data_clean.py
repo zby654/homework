@@ -4,8 +4,7 @@ import numpy as np
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
-# 1.改为电脑内图片真实路径
-DATA_PATH = r"E:\张博宇试作\CS600003\EuroSAT_RGB"
+DATA_PATH = "EuroSAT_RGB"
 IMG_SIZE = 64  # 把所有图片统一缩放到64×64
 CLASSES = ['AnnualCrop','Forest','HerbaceousVegetation','Highway',
            'Industrial','Pasture','PermanentCrop','Residential','River','SeaLake']
